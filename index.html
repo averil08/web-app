@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expenses Tracker</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/47eb9c3571.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="home">
+            <h1 class="dashboard">Dashboard</h1>
+            <div class="dashboard-icon">
+                <label for="edit">
+                    <i class="fa-solid fa-square-plus"></i>
+                </label>
+            </div>
+        </div>
+
+        <input type="checkbox" id="edit" class="hidden">  
+
+        <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none" id="modal">
+            <div class="bg-white rounded-lg shadow-lg max-w-2xl w-full p-4 relative max-h-screen overflow-y-auto">
+                <section class="lg:flex lg:flex-row w-full justify-center">
+                    <form id="tableForm" autocomplete="off" onsubmit="onFormSubmit()">
+                        <div>
+                            <label for="id"># ID</label>
+                            <input type="text" name="id" id="id">
+                        </div>
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                        <div>
+                            <label for="amount">Amount</label>
+                            <input type="text" name="amount" id="amount">
+                        </div>
+                        <div>
+                            <label for="date">Date</label>
+                            <input type="text" name="date" id="date">
+                        </div>
+    
+                        <div class="form_action--button">
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Reset">
+                        </div>
+                    </form>
+    
+                </section>
+                <label for="edit" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700 cursor-pointer">&times;</label>
+            </div>
+        </div>
+
+        <div class="greetings">
+            <div class="text">
+                <h2>Hi, User!</h2>
+                <p>Ready to take charge of your expenses and stay on top of your budget today? 😊</p>
+            </div>
+        </div>
+
+        <div class="table-container"> 
+            <table>
+                <caption>Daily Expenses</caption>
+                <tr>
+                    <td>
+                        <table class="list" id="storeList">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <style>
+            #edit:checked ~ #modal {
+                opacity:1;
+                pointer-events: auto;
+            }
+        </style>
+
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

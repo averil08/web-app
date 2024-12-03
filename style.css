@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*padding, border are included in element's total width, height. */
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: #eff2fb;
+}
+
+.home {
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.home .dashboard {
+    margin-right: auto; /*makes space between icons and dashboard*/
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.home .fa-square-plus {
+   padding: 12px;
+   font-size: 25px;
+}
+
+.greetings {
+    background: #d2e2fc; /* Purple background */
+    border-radius: 20px;
+    padding: 25px;
+    margin: 60px auto;
+    width: 75%;
+}
+
+
+.greetings h2 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.greetings p {
+    font-size: 1rem;
+    padding: 6px;
+}
+
+table{
+    width: 80%;
+    margin: 40px auto;
+    padding: 1rem;
+    text-align: center;
+    border: none;
+}
+
+caption {
+    background: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+table.list{
+    text-align: center;
+    width: 100%;
+}
+
+td {
+    background: white;
+    text-align: center;
+    padding: 4px 2px;
+    border: none;
+}
+
+input[type="text"]{
+    width:91%;
+    padding:12px 20px;
+    margin:8px 0;
+    display: inline-block;
+    border: 1px solid rgb(165,161,161);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="submit"],input[type="reset"]{
+    background: #eee;
+    padding:6px 12px;
+    margin:15px 0 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    background: #4b99d8;
+}
+
+input[type="reset"]:hover{
+    background: #4b99d8;
+}
+
+.edit-btn, .delete-btn {
+    background: #d2e2fc;
+    padding: 6px 12px;
+    margin: 15px 0 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    background: #002451;
+    color: #fff;
+}
