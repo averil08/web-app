@@ -1,7 +1,7 @@
 // Fetch and display data when the page loads
 window.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('http://localhost:4000/items');
+        const response = await fetch('https://web-app-h34v.onrender.com/items');
         if (!response.ok) {
             throw new Error('Failed to fetch data');
         }
@@ -55,7 +55,7 @@ function readFormData() {
 // Insert the data into the table and send it to the backend
 async function insertNewRecord(data) {
     try {
-        const response = await fetch('http://localhost:4000/items', {
+        const response = await fetch('https://web-app-h34v.onrender.com/items', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -123,7 +123,7 @@ async function updateRecord(formData) {
     const itemId = selectedRow.cells[0].innerText;  // Get the ID of the item to update
 
     try {
-        const response = await fetch(`http://localhost:4000/items/${itemId}`, {
+        const response = await fetch(`https://web-app-h34v.onrender.com/items${itemId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ async function updateRecord(formData) {
             console.log('Item updated successfully:', await response.json());
             
             // Fetch the updated table data
-            const newDataResponse = await fetch('http://localhost:4000/items');
+            const newDataResponse = await fetch('https://web-app-h34v.onrender.com/items');
             if (!newDataResponse.ok) {
                 throw new Error('Failed to fetch updated items');
             }
@@ -157,7 +157,7 @@ async function onDelete(td) {
         const itemId = row.cells[0].innerText; // Get the ID from the row
 
         try {
-            const response = await fetch(`http://localhost:4000/items/${itemId}`, {
+            const response = await fetch(`https://web-app-h34v.onrender.com/items/${itemId}`, {
                 method: 'DELETE'
             });
 
@@ -165,7 +165,7 @@ async function onDelete(td) {
                 console.log('Item deleted successfully');
                 
                 // Fetch the updated table data
-                const newDataResponse = await fetch('http://localhost:4000/items');
+                const newDataResponse = await fetch('https://web-app-h34v.onrender.com/items');
                 if (!newDataResponse.ok) {
                     throw new Error('Failed to fetch updated items');
                 }
